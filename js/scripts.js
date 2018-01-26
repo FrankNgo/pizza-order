@@ -3,35 +3,39 @@ function Pizza(size, meatToppings){
   this.meatToppings = meatToppings;
 }
 
-price = function(x,y){
+Pizza.prototype.sizePrice = function(size) {
   var p = 1
-  if(x === "Small"){
+  if(size === "Small"){
     p = p * 1;
-  } else if (x === "Medium"){
+  } else if (size === "Medium"){
     p = p * 1.25;
-  } else if( x === "Large"){
+  } else if( size === "Large"){
     p = p * 1.5;
-  } else if( x === "Extra Large"){
+  } else if( size === "Extra Large"){
     p = p * 1.75;
-  } else{
+  } else {
     alert("Please select a size");
   }
-
-  if(y === "Pepperoni"){
-    p = p + 1;
-  } else if (y === "Sausage"){
-    p = p + 1.25;
-  } else if (y === "Chicken"){
-    p = p + 1.50;
-  } else if (y === "Ham"){
-    p = p + 1.50;
-  } else{
-    alert("Please select a meat");
-  }
-
-  return p + 6;
+  return p * 6;
 }
 
+Pizza.prototype.meatPrice = function(meatToppings) {
+  var d = 0;
+  if(meatToppings === "Pepperoni"){
+    d = d + 1;
+  } else if (meatToppings === "Sausage"){
+    d = d + 1.25;
+  } else if (meatToppings === "Chicken"){
+    d = d + 1.50;
+  } else if (meatToppings === "Ham"){
+    d = d + 1.50;
+  }  else if (meatToppings === "Bacon"){
+      d = d + 1.75;
+  } else {
+    alert("Please select a meat");
+  }
+  return d;
+}
 
 
 $(document).ready(function() {
@@ -41,17 +45,12 @@ $(document).ready(function() {
     var size = $("#pizzaSize").val();
     var meatToppings = $("#meatToppings").val();
     var newOrder = new Pizza(size, meatToppings);
-    var pizzaPrice = "$" + price(size, meatToppings)
+    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + parseFloat(newOrder.meatPrice(meatToppings)));
 
     $("#show-order").show();
     $(".size").text(newOrder.size);
-    $(".toppings").text(newOrder.meatToppings);
+    $(".meatToppings").text(newOrder.meatToppings);
     $(".pizzaPrice").text(pizzaPrice);
-
-
-
-
-
 
   });
 });
