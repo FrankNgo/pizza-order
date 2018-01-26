@@ -14,28 +14,43 @@
         <form id="pizza-order">
           <div class="form-group">
             <p>Choose your size</p>
-            <select class="form-control" id="pizzaSize">
+            <select class="form-control" id="pizzaSize" style="width: 300px">
               <option>Select</option>
               <option>Small</option>
               <option>Medium</option>
               <option>Large</option>
               <option>Extra Large</option>
             </select>
-              <p>Choose your Meat: </p>
+            <div class="col-md-6">
+              <p>Choose Meats($1 Per Meat): </p>
               <input type="checkbox" name ="meatToppings" value="1">Pepperoni<br>
               <input type="checkbox" name ="meatToppings" value="1">Sausage<br>
               <input type="checkbox" name ="meatToppings" value="1">Chicken<br>
               <input type="checkbox" name ="meatToppings" value="1">Ham<br>
+              <input type="checkbox" name ="meatToppings" value="1">Salami<br>
+              <input type="checkbox" name ="meatToppings" value="1">Beef<br>
+              <input type="checkbox" name ="meatToppings" value="1">Philly Steak<br>
               <input type="checkbox" name ="meatToppings" value="1">Bacon<br>
+            </div>
+            <div class="col-md-6">
+              <p>Choose Veggies(.50 Per Veggie): </p>
+              <input type="checkbox" name ="meatToppings" value="1">Mushrooms<br>
+              <input type="checkbox" name ="meatToppings" value="1">Olives<br>
+              <input type="checkbox" name ="meatToppings" value="1">Black Onions<br>
+              <input type="checkbox" name ="meatToppings" value="1">Green Peppers<br>
+              <input type="checkbox" name ="meatToppings" value="1">Diced Tomatoes<br>
+              <input type="checkbox" name ="meatToppings" value="1">Pineapple<br>
+              <input type="checkbox" name ="meatToppings" value="1">Garlic<br>
+              <input type="checkbox" name ="meatToppings" value="1">Spinich<br>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Place Order</button>
+          <button id="order-button" type="submit" class="btn btn-primary">Place Order</button>
         </form>
       </div>
       <div id="show-order">
         <p>This is your pizza<p>
         <ul>
           <li>Size: <span class="size"></span></li>
-          <li>Meat Toppings: <span class="meatToppings"></span></li>
           <li>Total Price: <span class="pizzaPrice"></span></li>
         </ul>
     </div>

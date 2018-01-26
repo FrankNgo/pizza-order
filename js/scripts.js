@@ -4,24 +4,26 @@ function Pizza(size){
 }
 
 Pizza.prototype.sizePrice = function(size) {
-  var p = 1
+  var base = 1
   if(size === "Small"){
-    p = p * 1;
+    base = base * 1;
   } else if (size === "Medium"){
-    p = p * 1.25;
+    base = base * 1.25;
   } else if( size === "Large"){
-    p = p * 1.5;
+    base = base * 1.5;
   } else if( size === "Extra Large"){
-    p = p * 1.75;
+    base = base * 1.75;
   } else {
     alert("Please select a size");
   }
-  return p * 6;
+  return base * 6;
 }
 
-Pizza.prototype.updateSum = function() {
+Pizza.prototype.meatPrice = function() {
   var total = 0;
-  $("input:checkbox[name=meatToppings]:checked").each(function(i, n) {total += parseFloat($(n).val());})
+  $("input:checkbox[name=meatToppings]:checked").each(function(i, n) {
+    total += parseFloat($(n).val());
+  })
   return total;
 }
 
@@ -31,12 +33,11 @@ $(document).ready(function() {
 
     var size = $("#pizzaSize").val();
     var newOrder = new Pizza(size);
-    var meaty = newOrder.updateSum();
-    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + meaty);
+    var meatPrice = newOrder.meatPrice();
+    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + meatPrice);
 
     $("#show-order").show();
     $(".size").text(newOrder.size);
-    $(".meatToppings").text(newOrder.meatToppings);
     $(".pizzaPrice").text(pizzaPrice);
 
   });
