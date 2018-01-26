@@ -3,7 +3,7 @@
 }
 
 .col-md-6{
-  padding-top: 45px;
+  padding-top: 30px;
 }
 
 #order-button{
@@ -12,4 +12,14 @@
 
 #pizza-size{
   width: 40%;
+}
+
+h1{
+  font-size: 60px;
+  text-align: center;
+}
+
+
+h2{
+  text-align: center;
 }

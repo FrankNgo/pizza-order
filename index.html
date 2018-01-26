@@ -9,39 +9,66 @@
   </head>
   <body>
     <div class="container">
-      <h1>Pizza Order</h1>
+      <h1>Franks Pizza House</h1>
       <div class="well">
+        <h2>Build Your Pizza</h2>
         <form id="pizza-order">
           <div class="form-group">
             <p>Choose your size</p>
             <select class="form-control" id="pizzaSize" style="width: 300px">
               <option>Select</option>
-              <option>Small</option>
-              <option>Medium</option>
-              <option>Large</option>
-              <option>Extra Large</option>
+              <option>Small ($6)</option>
+              <option>Medium ($7.50)</option>
+              <option>Large ($9)</option>
+              <option>Extra Large ($10.50)</option>
             </select>
-            <div class="col-md-6">
-              <p>Choose Meats($1 Per Meat): </p>
-              <input type="checkbox" name ="meatToppings" value="1">Pepperoni<br>
-              <input type="checkbox" name ="meatToppings" value="1">Sausage<br>
-              <input type="checkbox" name ="meatToppings" value="1">Chicken<br>
-              <input type="checkbox" name ="meatToppings" value="1">Ham<br>
-              <input type="checkbox" name ="meatToppings" value="1">Salami<br>
-              <input type="checkbox" name ="meatToppings" value="1">Beef<br>
-              <input type="checkbox" name ="meatToppings" value="1">Philly Steak<br>
-              <input type="checkbox" name ="meatToppings" value="1">Bacon<br>
+            <div class="row">
+              <div class="col-md-6">
+                <p>Choose Meats($1 Per Meat): </p>
+                <input type="checkbox" name ="meatToppings" value="1">Pepperoni<br>
+                <input type="checkbox" name ="meatToppings" value="1">Sausage<br>
+                <input type="checkbox" name ="meatToppings" value="1">Chicken<br>
+                <input type="checkbox" name ="meatToppings" value="1">Ham<br>
+                <input type="checkbox" name ="meatToppings" value="1">Salami<br>
+                <input type="checkbox" name ="meatToppings" value="1">Beef<br>
+                <input type="checkbox" name ="meatToppings" value="1">Philly Steak<br>
+                <input type="checkbox" name ="meatToppings" value="1">Bacon<br>
+              </div>
+              <div class="col-md-6">
+                <p>Choose Veggies(.50 Per Veggie): </p>
+                <input type="checkbox" name ="veggieToppings" value=".50">Mushrooms<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Olives<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Black Onions<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Green Peppers<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Diced Tomatoes<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Pineapple<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Garlic<br>
+                <input type="checkbox" name ="veggieToppings" value=".50">Spinich<br>
+              </div>
             </div>
-            <div class="col-md-6">
-              <p>Choose Veggies(.50 Per Veggie): </p>
-              <input type="checkbox" name ="meatToppings" value="1">Mushrooms<br>
-              <input type="checkbox" name ="meatToppings" value="1">Olives<br>
-              <input type="checkbox" name ="meatToppings" value="1">Black Onions<br>
-              <input type="checkbox" name ="meatToppings" value="1">Green Peppers<br>
-              <input type="checkbox" name ="meatToppings" value="1">Diced Tomatoes<br>
-              <input type="checkbox" name ="meatToppings" value="1">Pineapple<br>
-              <input type="checkbox" name ="meatToppings" value="1">Garlic<br>
-              <input type="checkbox" name ="meatToppings" value="1">Spinich<br>
+            <div class="row">
+              <div class="col-md-6">
+                <p>Choose Crust type: </p>
+                <input type="checkbox" name ="crustToppings" value="0">Original<br>
+                <input type="checkbox" name ="crustToppings" value="0">Thin<br>
+                <input type="checkbox" name ="crustToppings" value="1">Deep Dish<br>
+                <input type="checkbox" name ="crustToppings" value="1">Garlic Topped<br>
+                <input type="checkbox" name ="crustToppings" value="1">Pepper Topped<br>
+                <input type="checkbox" name ="crustToppings" value="1">Pretze Topped<br>
+                <input type="checkbox" name ="crustToppings" value="3">Cheese Filled<br>
+                <input type="checkbox" name ="crustToppings" value="2">Gluten Free<br>
+              </div>
+              <div class="col-md-6">
+                <p>Choose Additinal Topping Finishes or Dipping Sauces: </p>
+                <input type="checkbox" name ="finishToppings" value=".50">Parmesan Cheese<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Feta Cheese<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Asiago Cheese<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Shredded Provalone Cheese<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Hot Sauce Dipping Sauce<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Ranch Dipping Sauce<br>
+                <input type="checkbox" name ="finishToppings" value=".50">Garling Butter Dipping Sauce<br>
+                <input type="checkbox" name ="finishToppings" value=".50">BBQ Dipping Sauce<br>
+              </div>
             </div>
           </div>
           <button id="order-button" type="submit" class="btn btn-primary">Place Order</button>
