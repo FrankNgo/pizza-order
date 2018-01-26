@@ -1,6 +1,6 @@
-function Pizza(size, meatToppings){
+function Pizza(size){
   this.size = size;
-  this.meatToppings = meatToppings;
+  this.meatToppings;
 }
 
 Pizza.prototype.sizePrice = function(size) {
@@ -19,26 +19,20 @@ Pizza.prototype.sizePrice = function(size) {
   return p * 6;
 }
 
-Pizza.prototype.meatPrice = function(meatToppings) {
-  var sum = 0;
-  $("input[name=meatToppings]:checked").each(function(){
-    sum += parseInt($(this).attr("rel"));
-  });
-  alert(sum);
+Pizza.prototype.updateSum = function() {
+  var total = 0;
+  $("input:checkbox[name=meatToppings]:checked").each(function(i, n) {total += parseFloat($(n).val());})
+  return total;
 }
-
 
 $(document).ready(function() {
   $("#pizza-order").submit(function(event){
     event.preventDefault();
 
     var size = $("#pizzaSize").val();
-    $("input:checkbox[name=meatToppings]:checked").change(function(){
-       newOrder.meatPrice(meatToppings);
-    });
-    newOrder.meatPrice(meatToppings);
-    var newOrder = new Pizza(size, meatToppings);
-    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + parseFloat(newOrder.meatPrice(meatToppings)));
+    var newOrder = new Pizza(size);
+    var meaty = newOrder.updateSum();
+    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + meaty);
 
     $("#show-order").show();
     $(".size").text(newOrder.size);
