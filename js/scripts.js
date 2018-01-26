@@ -53,6 +53,11 @@ Pizza.prototype.finishPrice = function() {
 
 
 $(document).ready(function() {
+  $("#delivery-form").submit(function(event){
+    event.preventDefault();
+    $("#address-form").hide();
+    $("#pizza-form").fadeIn();
+  });
   $("#pizza-order").submit(function(event){
     event.preventDefault();
 

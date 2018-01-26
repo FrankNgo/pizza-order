@@ -1,3 +1,7 @@
+#pizza-form{
+  display: none;
+}
+
  #show-order{
   display: none;
 }
@@ -6,8 +10,8 @@
   padding-top: 30px;
 }
 
-#order-button{
-  margin-top: 30px;
+#order-button ,#delivery-button{
+  margin-top: 20px;
 }
 
 #pizza-size{
@@ -17,9 +21,27 @@
 h1{
   font-size: 60px;
   text-align: center;
+  color: white;
+  font-weight: bolder;
 }
 
 
 h2{
   text-align: center;
+}
+
+body{
+  background-image: url("../images/pizza-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.well{
+  border: 1px solid black;
+}
+
+#address-form{
+
+
 }
