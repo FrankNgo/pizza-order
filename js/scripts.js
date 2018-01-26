@@ -20,21 +20,11 @@ Pizza.prototype.sizePrice = function(size) {
 }
 
 Pizza.prototype.meatPrice = function(meatToppings) {
-  var d = 0;
-  if(meatToppings === "Pepperoni"){
-    d = d + 1;
-  } else if (meatToppings === "Sausage"){
-    d = d + 1.25;
-  } else if (meatToppings === "Chicken"){
-    d = d + 1.50;
-  } else if (meatToppings === "Ham"){
-    d = d + 1.50;
-  }  else if (meatToppings === "Bacon"){
-      d = d + 1.75;
-  } else {
-    alert("Please select a meat");
-  }
-  return d;
+  var sum = 0;
+  $("input[name=meatToppings]:checked").each(function(){
+    sum += parseInt($(this).attr("rel"));
+  });
+  alert(sum);
 }
 
 
@@ -43,7 +33,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     var size = $("#pizzaSize").val();
-    var meatToppings = $("#meatToppings").val();
+    $("input:checkbox[name=meatToppings]:checked").change(function(){
+       newOrder.meatPrice(meatToppings);
+    });
+    newOrder.meatPrice(meatToppings);
     var newOrder = new Pizza(size, meatToppings);
     var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + parseFloat(newOrder.meatPrice(meatToppings)));
 
