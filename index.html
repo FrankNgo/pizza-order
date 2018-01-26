@@ -10,27 +10,36 @@
   <body>
     <div class="container">
       <h1>Pizza Order</h1>
-      <form id="pizza-order">
-        <div class="form-group">
-          <p>Choose your size</p>
-          <select class="form-control" id="pizzaSize">
-            <option>Select</option>
-            <option>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-            <option>Extra Large</option>
-          </select>
-            <p>Choose your Toppings</p>
-          <select class="form-control" id="pizzaSize">
-            <option>Select</option>
-            <option>Pepperoni</option>
-            <option>Sausage</option>
-            <option>Chicken</option>
-            <option>Ham</option>
-          </select>
-        </div>
-        <button id="placeOrder" class="btn btn-primary">Place Order </button>
-      </form>
+      <div class="well">
+        <form id="pizza-order">
+          <div class="form-group">
+            <p>Choose your size</p>
+            <select class="form-control" id="pizzaSize">
+              <option>Select</option>
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+              <option>Extra Large</option>
+            </select>
+              <p>Choose your Toppings</p>
+            <select class="form-control" id="meatToppings">
+              <option>Select</option>
+              <option>Pepperoni</option>
+              <option>Sausage</option>
+              <option>Chicken</option>
+              <option>Ham</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+      </div>
+      <div id="show-order">
+        <p>This is your pizza<p>
+        <ul>
+          <li>Size: <span class="size"></span></li>
+          <li>Meat Toppings: <span class="meatToppings"></span></li>
+          <li>Total Price: <span class="pizzaPrice"></span></li>
+        </ul>
     </div>
   </body>
 </html>
