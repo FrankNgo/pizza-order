@@ -55,8 +55,17 @@ Pizza.prototype.finishPrice = function() {
 $(document).ready(function() {
   $("#delivery-form").submit(function(event){
     event.preventDefault();
+    var name = $("input#name").val();
+    var address = $("input#address").val();
+    var apt = $("input#apt").val();
+    var zipCode = $("input#zipCode").val();
+    var phoneNumber = $("input#phoneNumber").val();
+
     $("#address-form").hide();
     $("#pizza-form").fadeIn();
+
+    $(".name").text(name);
+
   });
   $("#pizza-order").submit(function(event){
     event.preventDefault();
@@ -67,11 +76,13 @@ $(document).ready(function() {
     var veggiePrice = newOrder.veggiePrice();
     var crustPrice = newOrder.crustPrice();
     var finishPrice = newOrder.finishPrice();
-    var pizzaPrice = "$" + (parseFloat(newOrder.sizePrice(size)) + meatPrice + veggiePrice + crustPrice + finishPrice);
+    var pizzaPrice = "$" + parseFloat((newOrder.sizePrice(size)) + meatPrice + veggiePrice + crustPrice + finishPrice).toFixed(2);
 
+    $("#pizza-form").hide();
     $("#show-order").fadeIn();
-    $(".size").text(newOrder.size);
-    $(".pizzaPrice").text(pizzaPrice);
 
+    $(".pizzaTotal").text(pizzaPrice);
+    $("#name").text(name);
+    $("#fullAddress").text(address);
   });
 });

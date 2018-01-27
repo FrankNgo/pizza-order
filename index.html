@@ -16,18 +16,18 @@
             <h2>Enter Delivery Address</h2>
             <label for="name">Name</label>
             <input id="name" class="form-control" type="text">
-            <label for="name">Street Address</label>
-            <input id="name" class="form-control" type="text">
+            <label for="address">Street Address</label>
+            <input id="address" class="form-control" type="text">
             <div class="col-md-6">
-              <label for="name">Apt/Ste/Floor</label>
-              <input id="name" class="form-control" type="text" style="width: 200px">
+              <label for="apt">Apt/Ste/Floor</label>
+              <input id="apt" class="form-control" type="text" style="width: 200px">
             </div>
             <div class="col-md-6">
-              <label for="name">Zip Code</label>
-              <input id="name" class="form-control" type="text"style="width: 200px">
+              <label for="zipCode">Zip Code</label>
+              <input id="zipCode" class="form-control" type="text"style="width: 200px">
             </div>
-            <label for="name">Phone Number</label>
-            <input id="name" class="form-control" type="text">
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" class="form-control" type="text">
             <button id="delivery-button" type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
@@ -97,11 +97,27 @@
         </form>
       </div>
       <div id="show-order">
-        <p>This is your pizza<p>
-        <ul>
-          <li>Size: <span class="size"></span></li>
-          <li>Total Price: <span class="pizzaPrice"></span></li>
-        </ul>
+        <div class="col-lg-6 col-lg-offset-3">
+          <div class="well" id="address-form">
+            <h2>Order Information</h2>
+            <label>Hey <span class="name"></span> thanks for placing your order</label><br>
+            <label>Your Total: <span class="pizzaTotal"></span></label><br>
+            <label>Your Estimated Delivery Time: 30 Minutes</label><br>
+            <label>Address: <span class="fullAddress"></span></label><br>
+            <div class="col-md-6">
+              <label for="apt">Apt/Ste/Floor</label>
+              <input id="apt" class="form-control" type="text" style="width: 200px">
+            </div>
+            <div class="col-md-6">
+              <label for="zipCode">Zip Code</label>
+              <input id="zipCode" class="form-control" type="text"style="width: 200px">
+            </div>
+            <label for="phoneNumber">Phone Number</label>
+            <input id="phoneNumber" class="form-control" type="text">
+            <button id="delivery-button" type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
