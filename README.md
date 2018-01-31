@@ -16,6 +16,17 @@ To install and use you will need a working internet connection to download it.  
 1. Clone drive from https://github.com/FrankNgo/pizza-order
 2. Open index.html in any web browser
 ```
+## Specifications
+
+  * User is able to enter in basic address "delivery" information and move on to next screen
+  * User is able to check off items they would like
+    * Total price is added together and displayed on the next screen
+  * User is able to see their complete order screen with total price and "delivery" information
+  * User is able to go back and forth and make changes before they complete their order
+  * User is able to go to the final complete screen of the application by entering a complete order
+
+
+
 
 ## Running the tests
 
